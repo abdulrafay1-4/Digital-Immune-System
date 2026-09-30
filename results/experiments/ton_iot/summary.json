@@ -1,0 +1,417 @@
+{
+  "calibration": {
+    "sha256": "65d5465df1809b984fd10e4703bc9c012d1aefd11803773856364216f0a3520d",
+    "aggregate": "mean",
+    "calibration_auc": {
+      "mean": 0.828824617781673,
+      "max": 0.7596114519427403
+    },
+    "thresholds": {
+      "q95": 0.25228019098084803,
+      "q99": 0.37657359618087627
+    }
+  },
+  "windows": {
+    "windows": 14371,
+    "attack_windows": 180,
+    "auc_disturbance": 0.7186851603911713,
+    "tpr_at_q95": 0.2777777777777778,
+    "fpr_at_q95": 0.05538721725036995,
+    "tpr_at_q99": 0.15,
+    "fpr_at_q99": 0.04418293284476076,
+    "per_type": {
+      "backdoor": {
+        "windows": 32,
+        "median_disturbance": 0.239003933352137,
+        "tpr_at_q95": 0.34375
+      },
+      "ddos": {
+        "windows": 6,
+        "median_disturbance": 0.2079456205697456,
+        "tpr_at_q95": 0.3333333333333333
+      },
+      "dos": {
+        "windows": 6,
+        "median_disturbance": 0.643771004484475,
+        "tpr_at_q95": 0.8333333333333334
+      },
+      "injection": {
+        "windows": 17,
+        "median_disturbance": 0.23714026069802832,
+        "tpr_at_q95": 0.4117647058823529
+      },
+      "mitm": {
+        "windows": 51,
+        "median_disturbance": 0.0,
+        "tpr_at_q95": 0.21568627450980393
+      },
+      "password": {
+        "windows": 10,
+        "median_disturbance": 0.38237648284468856,
+        "tpr_at_q95": 1.0
+      },
+      "ransomware": {
+        "windows": 54,
+        "median_disturbance": 0.0,
+        "tpr_at_q95": 0.0
+      },
+      "xss": {
+        "windows": 4,
+        "median_disturbance": 0.4239645021068913,
+        "tpr_at_q95": 1.0
+      }
+    },
+    "auc_isolation_forest": 0.8213742669454036
+  },
+  "replay": {
+    "devices": 28,
+    "compromised": [
+      "node-0",
+      "node-10",
+      "node-12",
+      "node-14",
+      "node-15",
+      "node-16",
+      "node-17",
+      "node-18",
+      "node-19",
+      "node-2",
+      "node-20",
+      "node-21",
+      "node-22",
+      "node-26",
+      "node-27",
+      "node-4",
+      "node-5"
+    ],
+    "ticks": 420,
+    "seeds": [
+      20000,
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007,
+      20008,
+      20009
+    ],
+    "by_arm": {
+      "full": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": null,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": null,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "static_trust": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": null,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": null,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "no_sharing": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": null,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": null,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "no_memory": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": null,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": null,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "binary_response": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": null,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": null,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "no_recovery": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": null,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": null,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "binary_zt": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": null,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": null,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "beta_reputation": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": null,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": null,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "isolation_forest": {
+        "device_tpr": 0.9941,
+        "device_fpr": 0.9909,
+        "tick_precision": 0.0398,
+        "tick_recall": 0.0706,
+        "response_coverage": 0.1722,
+        "latency_response_mean": 47.557,
+        "false_restriction_rate": 0.9909,
+        "availability_cost": 135.3,
+        "containment_rate": 0.9941
+      }
+    }
+  },
+  "device_map": {
+    "node-0": {
+      "host": "13.55.50.68",
+      "active_windows": 6,
+      "attack_windows": 6,
+      "attack_types": {
+        "ransomware": 7
+      }
+    },
+    "node-1": {
+      "host": "172.17.0.3",
+      "active_windows": 40,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-2": {
+      "host": "192.168.1.1",
+      "active_windows": 305,
+      "attack_windows": 3,
+      "attack_types": {
+        "mitm": 4
+      }
+    },
+    "node-3": {
+      "host": "192.168.1.133",
+      "active_windows": 181,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-4": {
+      "host": "192.168.1.152",
+      "active_windows": 55,
+      "attack_windows": 2,
+      "attack_types": {
+        "mitm": 2
+      }
+    },
+    "node-5": {
+      "host": "192.168.1.169",
+      "active_windows": 249,
+      "attack_windows": 1,
+      "attack_types": {
+        "mitm": 1
+      }
+    },
+    "node-6": {
+      "host": "192.168.1.17",
+      "active_windows": 23,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-7": {
+      "host": "192.168.1.180",
+      "active_windows": 286,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-8": {
+      "host": "192.168.1.184",
+      "active_windows": 70,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-9": {
+      "host": "192.168.1.190",
+      "active_windows": 298,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-10": {
+      "host": "192.168.1.193",
+      "active_windows": 371,
+      "attack_windows": 32,
+      "attack_types": {
+        "ransomware": 3190,
+        "backdoor": 19857
+      }
+    },
+    "node-11": {
+      "host": "192.168.1.194",
+      "active_windows": 147,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-12": {
+      "host": "192.168.1.195",
+      "active_windows": 316,
+      "attack_windows": 2,
+      "attack_types": {
+        "mitm": 2
+      }
+    },
+    "node-13": {
+      "host": "192.168.1.250",
+      "active_windows": 44,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-14": {
+      "host": "192.168.1.30",
+      "active_windows": 16,
+      "attack_windows": 16,
+      "attack_types": {
+        "dos": 9103,
+        "injection": 7852,
+        "ddos": 16666,
+        "password": 9730
+      }
+    },
+    "node-15": {
+      "host": "192.168.1.31",
+      "active_windows": 43,
+      "attack_windows": 43,
+      "attack_types": {
+        "dos": 373,
+        "injection": 12147,
+        "ddos": 3320,
+        "password": 10270,
+        "mitm": 510
+      }
+    },
+    "node-16": {
+      "host": "192.168.1.32",
+      "active_windows": 2,
+      "attack_windows": 2,
+      "attack_types": {
+        "xss": 19369
+      }
+    },
+    "node-17": {
+      "host": "192.168.1.33",
+      "active_windows": 21,
+      "attack_windows": 21,
+      "attack_types": {
+        "ransomware": 9346,
+        "backdoor": 93
+      }
+    },
+    "node-18": {
+      "host": "192.168.1.34",
+      "active_windows": 19,
+      "attack_windows": 19,
+      "attack_types": {
+        "ddos": 4,
+        "mitm": 524
+      }
+    },
+    "node-19": {
+      "host": "192.168.1.36",
+      "active_windows": 2,
+      "attack_windows": 2,
+      "attack_types": {
+        "xss": 631
+      }
+    },
+    "node-20": {
+      "host": "192.168.1.37",
+      "active_windows": 21,
+      "attack_windows": 21,
+      "attack_types": {
+        "ransomware": 7450,
+        "backdoor": 50
+      }
+    },
+    "node-21": {
+      "host": "192.168.1.38",
+      "active_windows": 1,
+      "attack_windows": 1,
+      "attack_types": {
+        "ddos": 10
+      }
+    },
+    "node-22": {
+      "host": "192.168.1.39",
+      "active_windows": 2,
+      "attack_windows": 2,
+      "attack_types": {
+        "dos": 359
+      }
+    },
+    "node-23": {
+      "host": "192.168.1.49",
+      "active_windows": 53,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-24": {
+      "host": "192.168.1.6",
+      "active_windows": 82,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-25": {
+      "host": "192.168.1.79",
+      "active_windows": 232,
+      "attack_windows": 0,
+      "attack_types": {}
+    },
+    "node-26": {
+      "host": "203.14.129.10",
+      "active_windows": 6,
+      "attack_windows": 6,
+      "attack_types": {
+        "ransomware": 7
+      }
+    },
+    "node-27": {
+      "host": "220.158.215.20",
+      "active_windows": 3,
+      "attack_windows": 1,
+      "attack_types": {
+        "injection": 1
+      }
+    }
+  }
+}

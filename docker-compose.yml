@@ -1,0 +1,260 @@
+# The container deployment: monitoring agents, control plane, immune memory, attesters, trust
+# fusion, operator console and a Redis broker, each in its own container.
+#   docker compose up --build --exit-code-from control
+
+name: dis
+
+x-app: &app
+  build:
+    context: .
+    dockerfile: deploy/Dockerfile
+  image: trust-aware-dis:latest
+  networks: [dis]
+
+x-env: &env
+  REDIS_URL: rediss://redis:6379/0
+  DIS_RUN_ID: ${DIS_RUN_ID:-wire-demo}
+  DIS_NODES: ${DIS_NODES:-node-0,node-1,node-2}
+  DIS_TICKS: ${DIS_TICKS:-40}
+  DIS_TICK_SECONDS: "1.0"
+  DIS_SEED: ${DIS_SEED:-7}
+  DIS_SCENARIO: ${DIS_SCENARIO:-}
+  DIS_LEAD_TICKS: ${DIS_LEAD_TICKS:-8}
+  VICTIM: node-2
+
+x-after-control: &after-control
+  control:
+    condition: service_healthy
+
+x-attester: &attester
+  <<: *app
+  command: attest
+  depends_on: *after-control
+
+x-fusion: &fusion
+  <<: *app
+  command: fuse
+  depends_on:
+    redis:
+      condition: service_healthy
+  healthcheck:
+    test: [CMD, test, -f, /tmp/ready]
+    interval: 1s
+    retries: 60
+
+services:
+  provision:
+    <<: *app
+    command: provision
+    user: "0"
+    environment:
+      <<: *env
+      SECRETS_DIR: /out
+    volumes:
+      - server-secrets:/out/server
+      - control-secrets:/out/control
+      - memory-secrets:/out/memory
+      - attester-verifier-secrets:/out/attesters/attester-verifier
+      - attester-correlation-secrets:/out/attesters/attester-correlation
+      - attester-fusion-secrets:/out/attesters/attester-fusion
+      - attester-orchestrator-secrets:/out/attesters/attester-orchestrator
+      - attester-monitoring-secrets:/out/attesters/attester-monitoring
+      - node-0-secrets:/out/nodes/mon-node-0
+      - node-1-secrets:/out/nodes/mon-node-1
+      - node-2-secrets:/out/nodes/mon-node-2
+      - sensor-0-secrets:/out/sensors/sensor-node-0
+      - sensor-1-secrets:/out/sensors/sensor-node-1
+      - sensor-2-secrets:/out/sensors/sensor-node-2
+      - impersonator-secrets:/out/impersonator
+      - console-secrets:/out/console
+      - fusion-a-secrets:/out/fusion/fusion-a
+      - fusion-b-secrets:/out/fusion/fusion-b
+      - fusion-c-secrets:/out/fusion/fusion-c
+
+  redis:
+    image: redis:7.4-alpine
+    user: "999"
+    depends_on:
+      provision:
+        condition: service_completed_successfully
+    command:
+      - sh
+      - -c
+      - >-
+        exec redis-server --port 0 --tls-port 6379
+        --tls-cert-file /tls/redis.crt --tls-key-file /tls/redis.key
+        --tls-ca-cert-file /tls/ca.crt --tls-auth-clients yes
+        --aclfile /tls/users.acl --save "" --appendonly no
+    volumes:
+      - server-secrets:/tls:ro
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          redis-cli --tls --cacert /tls/ca.crt --cert /tls/client.crt
+          --key /tls/client.key --user health --pass "$$(cat /tls/redis.pass)"
+          --no-auth-warning ping
+      interval: 1s
+      retries: 30
+    networks: [dis]
+
+  memory:
+    <<: *app
+    command: memory
+    depends_on:
+      provision:
+        condition: service_completed_successfully
+    environment:
+      <<: *env
+    volumes:
+      - memory-secrets:/secrets:ro
+    healthcheck:
+      test: [CMD, test, -f, /tmp/ready]
+      interval: 1s
+      retries: 60
+
+  control:
+    <<: *app
+    command: control
+    depends_on:
+      redis:
+        condition: service_healthy
+      memory:
+        condition: service_healthy
+      fusion-a:
+        condition: service_healthy
+      fusion-b:
+        condition: service_healthy
+      fusion-c:
+        condition: service_healthy
+    environment:
+      <<: *env
+      EXPECT_RESTRICTED: node-1
+      EXPECT_HEALTHY: node-0,node-2
+      EXPECT_BINDER: rust
+      EXPECT_REFUSALS: "1"
+    volumes:
+      - control-secrets:/secrets:ro
+    healthcheck:
+      test: [CMD, test, -f, /tmp/ready]
+      interval: 1s
+      retries: 60
+
+  node-0:
+    <<: *app
+    command: node
+    depends_on: *after-control
+    environment:
+      <<: *env
+      NODE_ID: node-0
+    volumes:
+      - node-0-secrets:/secrets:ro
+
+  node-1:
+    <<: *app
+    command: node
+    depends_on: *after-control
+    environment:
+      <<: *env
+      NODE_ID: node-1
+      ATTACK: "10,30,0.6"
+    volumes:
+      - node-1-secrets:/secrets:ro
+
+  node-2:
+    <<: *app
+    command: node
+    depends_on: *after-control
+    environment:
+      <<: *env
+      NODE_ID: node-2
+    volumes:
+      - node-2-secrets:/secrets:ro
+
+  fusion-a:
+    <<: *fusion
+    environment: {<<: *env, FUSION_REPLICA: a}
+    volumes: [fusion-a-secrets:/secrets:ro]
+
+  fusion-b:
+    <<: *fusion
+    environment: {<<: *env, FUSION_REPLICA: b}
+    volumes: [fusion-b-secrets:/secrets:ro]
+
+  fusion-c:
+    <<: *fusion
+    environment: {<<: *env, FUSION_REPLICA: c}
+    volumes: [fusion-c-secrets:/secrets:ro]
+
+  attester-verifier:
+    <<: *attester
+    environment: {<<: *env, ATTESTER: verifier}
+    volumes: [attester-verifier-secrets:/secrets:ro]
+
+  attester-correlation:
+    <<: *attester
+    environment: {<<: *env, ATTESTER: correlation}
+    volumes: [attester-correlation-secrets:/secrets:ro]
+
+  attester-fusion:
+    <<: *attester
+    environment: {<<: *env, ATTESTER: fusion}
+    volumes: [attester-fusion-secrets:/secrets:ro]
+
+  attester-orchestrator:
+    <<: *attester
+    environment: {<<: *env, ATTESTER: orchestrator}
+    volumes: [attester-orchestrator-secrets:/secrets:ro]
+
+  attester-monitoring:
+    <<: *attester
+    environment: {<<: *env, ATTESTER: monitoring}
+    volumes: [attester-monitoring-secrets:/secrets:ro]
+
+  impersonator:
+    <<: *app
+    command: impersonate
+    depends_on: *after-control
+    environment:
+      <<: *env
+      FLOOD_FRAMES_PER_TICK: ${FLOOD_FRAMES_PER_TICK:-0}
+    volumes:
+      - impersonator-secrets:/secrets:ro
+
+  console:
+    <<: *app
+    command: console
+    depends_on: *after-control
+    environment:
+      <<: *env
+      CONSOLE_PORT: "8700"
+    ports: ["127.0.0.1:8700:8700"]
+    networks: [dis, front]
+    volumes:
+      - console-secrets:/secrets:ro
+
+volumes:
+  server-secrets:
+  control-secrets:
+  memory-secrets:
+  attester-verifier-secrets:
+  attester-correlation-secrets:
+  attester-fusion-secrets:
+  attester-orchestrator-secrets:
+  attester-monitoring-secrets:
+  node-0-secrets:
+  node-1-secrets:
+  node-2-secrets:
+  sensor-0-secrets:
+  sensor-1-secrets:
+  sensor-2-secrets:
+  impersonator-secrets:
+  console-secrets:
+  fusion-a-secrets:
+  fusion-b-secrets:
+  fusion-c-secrets:
+
+networks:
+  dis:
+    internal: true
+  front: {}

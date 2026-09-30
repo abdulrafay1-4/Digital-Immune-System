@@ -1,0 +1,1339 @@
+{
+ "services": {
+  "provision": {
+   "volumes": [
+    "node-3-secrets:/out/nodes/mon-node-3",
+    "node-4-secrets:/out/nodes/mon-node-4",
+    "node-5-secrets:/out/nodes/mon-node-5",
+    "node-6-secrets:/out/nodes/mon-node-6",
+    "node-7-secrets:/out/nodes/mon-node-7",
+    "node-8-secrets:/out/nodes/mon-node-8",
+    "node-9-secrets:/out/nodes/mon-node-9",
+    "node-10-secrets:/out/nodes/mon-node-10",
+    "node-11-secrets:/out/nodes/mon-node-11",
+    "node-12-secrets:/out/nodes/mon-node-12",
+    "node-13-secrets:/out/nodes/mon-node-13",
+    "node-14-secrets:/out/nodes/mon-node-14",
+    "node-15-secrets:/out/nodes/mon-node-15",
+    "node-16-secrets:/out/nodes/mon-node-16",
+    "node-17-secrets:/out/nodes/mon-node-17",
+    "node-18-secrets:/out/nodes/mon-node-18",
+    "node-19-secrets:/out/nodes/mon-node-19",
+    "node-20-secrets:/out/nodes/mon-node-20",
+    "node-21-secrets:/out/nodes/mon-node-21",
+    "node-22-secrets:/out/nodes/mon-node-22",
+    "node-23-secrets:/out/nodes/mon-node-23",
+    "node-24-secrets:/out/nodes/mon-node-24",
+    "node-25-secrets:/out/nodes/mon-node-25",
+    "node-26-secrets:/out/nodes/mon-node-26",
+    "node-27-secrets:/out/nodes/mon-node-27",
+    "node-28-secrets:/out/nodes/mon-node-28",
+    "node-29-secrets:/out/nodes/mon-node-29",
+    "node-30-secrets:/out/nodes/mon-node-30",
+    "node-31-secrets:/out/nodes/mon-node-31",
+    "node-32-secrets:/out/nodes/mon-node-32",
+    "node-33-secrets:/out/nodes/mon-node-33",
+    "node-34-secrets:/out/nodes/mon-node-34",
+    "node-35-secrets:/out/nodes/mon-node-35",
+    "node-36-secrets:/out/nodes/mon-node-36",
+    "node-37-secrets:/out/nodes/mon-node-37",
+    "node-38-secrets:/out/nodes/mon-node-38",
+    "node-39-secrets:/out/nodes/mon-node-39",
+    "node-40-secrets:/out/nodes/mon-node-40",
+    "node-41-secrets:/out/nodes/mon-node-41",
+    "node-42-secrets:/out/nodes/mon-node-42",
+    "node-43-secrets:/out/nodes/mon-node-43",
+    "node-44-secrets:/out/nodes/mon-node-44",
+    "node-45-secrets:/out/nodes/mon-node-45",
+    "node-46-secrets:/out/nodes/mon-node-46",
+    "node-47-secrets:/out/nodes/mon-node-47",
+    "node-48-secrets:/out/nodes/mon-node-48",
+    "node-49-secrets:/out/nodes/mon-node-49"
+   ]
+  },
+  "control": {
+   "environment": {
+    "EXPECT_RESTRICTED": "",
+    "EXPECT_HEALTHY": "",
+    "EXPECT_REFUSALS": ""
+   },
+   "volumes": []
+  },
+  "console": {
+   "environment": {
+    "CONSOLE_AUTO_ADJUDICATE": "oracle"
+   }
+  },
+  "node-3": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-3"
+   },
+   "volumes": [
+    "node-3-secrets:/secrets:ro"
+   ]
+  },
+  "node-4": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-4"
+   },
+   "volumes": [
+    "node-4-secrets:/secrets:ro"
+   ]
+  },
+  "node-5": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-5"
+   },
+   "volumes": [
+    "node-5-secrets:/secrets:ro"
+   ]
+  },
+  "node-6": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-6"
+   },
+   "volumes": [
+    "node-6-secrets:/secrets:ro"
+   ]
+  },
+  "node-7": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-7"
+   },
+   "volumes": [
+    "node-7-secrets:/secrets:ro"
+   ]
+  },
+  "node-8": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-8"
+   },
+   "volumes": [
+    "node-8-secrets:/secrets:ro"
+   ]
+  },
+  "node-9": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-9"
+   },
+   "volumes": [
+    "node-9-secrets:/secrets:ro"
+   ]
+  },
+  "node-10": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-10"
+   },
+   "volumes": [
+    "node-10-secrets:/secrets:ro"
+   ]
+  },
+  "node-11": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-11"
+   },
+   "volumes": [
+    "node-11-secrets:/secrets:ro"
+   ]
+  },
+  "node-12": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-12"
+   },
+   "volumes": [
+    "node-12-secrets:/secrets:ro"
+   ]
+  },
+  "node-13": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-13"
+   },
+   "volumes": [
+    "node-13-secrets:/secrets:ro"
+   ]
+  },
+  "node-14": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-14"
+   },
+   "volumes": [
+    "node-14-secrets:/secrets:ro"
+   ]
+  },
+  "node-15": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-15"
+   },
+   "volumes": [
+    "node-15-secrets:/secrets:ro"
+   ]
+  },
+  "node-16": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-16"
+   },
+   "volumes": [
+    "node-16-secrets:/secrets:ro"
+   ]
+  },
+  "node-17": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-17"
+   },
+   "volumes": [
+    "node-17-secrets:/secrets:ro"
+   ]
+  },
+  "node-18": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-18"
+   },
+   "volumes": [
+    "node-18-secrets:/secrets:ro"
+   ]
+  },
+  "node-19": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-19"
+   },
+   "volumes": [
+    "node-19-secrets:/secrets:ro"
+   ]
+  },
+  "node-20": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-20"
+   },
+   "volumes": [
+    "node-20-secrets:/secrets:ro"
+   ]
+  },
+  "node-21": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-21"
+   },
+   "volumes": [
+    "node-21-secrets:/secrets:ro"
+   ]
+  },
+  "node-22": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-22"
+   },
+   "volumes": [
+    "node-22-secrets:/secrets:ro"
+   ]
+  },
+  "node-23": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-23"
+   },
+   "volumes": [
+    "node-23-secrets:/secrets:ro"
+   ]
+  },
+  "node-24": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-24"
+   },
+   "volumes": [
+    "node-24-secrets:/secrets:ro"
+   ]
+  },
+  "node-25": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-25"
+   },
+   "volumes": [
+    "node-25-secrets:/secrets:ro"
+   ]
+  },
+  "node-26": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-26"
+   },
+   "volumes": [
+    "node-26-secrets:/secrets:ro"
+   ]
+  },
+  "node-27": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-27"
+   },
+   "volumes": [
+    "node-27-secrets:/secrets:ro"
+   ]
+  },
+  "node-28": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-28"
+   },
+   "volumes": [
+    "node-28-secrets:/secrets:ro"
+   ]
+  },
+  "node-29": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-29"
+   },
+   "volumes": [
+    "node-29-secrets:/secrets:ro"
+   ]
+  },
+  "node-30": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-30"
+   },
+   "volumes": [
+    "node-30-secrets:/secrets:ro"
+   ]
+  },
+  "node-31": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-31"
+   },
+   "volumes": [
+    "node-31-secrets:/secrets:ro"
+   ]
+  },
+  "node-32": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-32"
+   },
+   "volumes": [
+    "node-32-secrets:/secrets:ro"
+   ]
+  },
+  "node-33": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-33"
+   },
+   "volumes": [
+    "node-33-secrets:/secrets:ro"
+   ]
+  },
+  "node-34": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-34"
+   },
+   "volumes": [
+    "node-34-secrets:/secrets:ro"
+   ]
+  },
+  "node-35": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-35"
+   },
+   "volumes": [
+    "node-35-secrets:/secrets:ro"
+   ]
+  },
+  "node-36": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-36"
+   },
+   "volumes": [
+    "node-36-secrets:/secrets:ro"
+   ]
+  },
+  "node-37": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-37"
+   },
+   "volumes": [
+    "node-37-secrets:/secrets:ro"
+   ]
+  },
+  "node-38": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-38"
+   },
+   "volumes": [
+    "node-38-secrets:/secrets:ro"
+   ]
+  },
+  "node-39": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-39"
+   },
+   "volumes": [
+    "node-39-secrets:/secrets:ro"
+   ]
+  },
+  "node-40": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-40"
+   },
+   "volumes": [
+    "node-40-secrets:/secrets:ro"
+   ]
+  },
+  "node-41": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-41"
+   },
+   "volumes": [
+    "node-41-secrets:/secrets:ro"
+   ]
+  },
+  "node-42": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-42"
+   },
+   "volumes": [
+    "node-42-secrets:/secrets:ro"
+   ]
+  },
+  "node-43": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-43"
+   },
+   "volumes": [
+    "node-43-secrets:/secrets:ro"
+   ]
+  },
+  "node-44": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-44"
+   },
+   "volumes": [
+    "node-44-secrets:/secrets:ro"
+   ]
+  },
+  "node-45": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-45"
+   },
+   "volumes": [
+    "node-45-secrets:/secrets:ro"
+   ]
+  },
+  "node-46": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-46"
+   },
+   "volumes": [
+    "node-46-secrets:/secrets:ro"
+   ]
+  },
+  "node-47": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-47"
+   },
+   "volumes": [
+    "node-47-secrets:/secrets:ro"
+   ]
+  },
+  "node-48": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-48"
+   },
+   "volumes": [
+    "node-48-secrets:/secrets:ro"
+   ]
+  },
+  "node-49": {
+   "image": "dis-fyp:latest",
+   "command": "node",
+   "networks": [
+    "dis"
+   ],
+   "depends_on": {
+    "control": {
+     "condition": "service_healthy"
+    }
+   },
+   "environment": {
+    "DIS_SCENARIO": "a13",
+    "DIS_NODES": "node-0,node-1,node-2,node-3,node-4,node-5,node-6,node-7,node-8,node-9,node-10,node-11,node-12,node-13,node-14,node-15,node-16,node-17,node-18,node-19,node-20,node-21,node-22,node-23,node-24,node-25,node-26,node-27,node-28,node-29,node-30,node-31,node-32,node-33,node-34,node-35,node-36,node-37,node-38,node-39,node-40,node-41,node-42,node-43,node-44,node-45,node-46,node-47,node-48,node-49",
+    "DIS_TICKS": "40",
+    "DIS_SEED": "8013",
+    "DIS_RUN_ID": "a13-full-8013",
+    "DIS_LEAD_TICKS": "20",
+    "REDIS_URL": "rediss://redis:6379/0",
+    "DIS_TICK_SECONDS": "1.0",
+    "NODE_ID": "node-49"
+   },
+   "volumes": [
+    "node-49-secrets:/secrets:ro"
+   ]
+  }
+ },
+ "volumes": {
+  "node-3-secrets": {},
+  "node-4-secrets": {},
+  "node-5-secrets": {},
+  "node-6-secrets": {},
+  "node-7-secrets": {},
+  "node-8-secrets": {},
+  "node-9-secrets": {},
+  "node-10-secrets": {},
+  "node-11-secrets": {},
+  "node-12-secrets": {},
+  "node-13-secrets": {},
+  "node-14-secrets": {},
+  "node-15-secrets": {},
+  "node-16-secrets": {},
+  "node-17-secrets": {},
+  "node-18-secrets": {},
+  "node-19-secrets": {},
+  "node-20-secrets": {},
+  "node-21-secrets": {},
+  "node-22-secrets": {},
+  "node-23-secrets": {},
+  "node-24-secrets": {},
+  "node-25-secrets": {},
+  "node-26-secrets": {},
+  "node-27-secrets": {},
+  "node-28-secrets": {},
+  "node-29-secrets": {},
+  "node-30-secrets": {},
+  "node-31-secrets": {},
+  "node-32-secrets": {},
+  "node-33-secrets": {},
+  "node-34-secrets": {},
+  "node-35-secrets": {},
+  "node-36-secrets": {},
+  "node-37-secrets": {},
+  "node-38-secrets": {},
+  "node-39-secrets": {},
+  "node-40-secrets": {},
+  "node-41-secrets": {},
+  "node-42-secrets": {},
+  "node-43-secrets": {},
+  "node-44-secrets": {},
+  "node-45-secrets": {},
+  "node-46-secrets": {},
+  "node-47-secrets": {},
+  "node-48-secrets": {},
+  "node-49-secrets": {}
+ }
+}

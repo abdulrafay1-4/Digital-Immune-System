@@ -1,0 +1,66 @@
+# Frozen coefficients, chosen on the calibration set only (m8_eval_harness/calibrate.py).
+# Mirrors m8_eval_harness/params.py FROZEN; a test asserts it.
+
+run:
+  seed: 42
+  tick_seconds: 1.0
+
+trust:
+  lambda: 0.7
+  lambda_up: 0.7
+  beta_decay: 0.01
+  ts_min: 0.05
+  ts_init: 1.0
+  w_identity: 0.25
+  w_behavioral: 0.25
+  w_device: 0.25
+  w_network: 0.25
+
+fusion:
+  alpha: 0.40
+  beta: 0.35
+  gamma: 0.25
+  drift_coeff: 0.3
+  w_ts: 0.25
+  w_cti: 0.20
+  w_gt: 0.25
+  w_resp: 0.15
+  w_health: 0.15
+
+reputation:
+  rep_init: 1.0
+  rep_min: 0.05
+  lam_up: 0.85
+  lam_down: 0.6
+
+correlation:
+  campaign_ti_threshold: 0.4
+  cohort_margin: 0.15
+  cohort_min_nodes: 3
+  cohort_baseline_cap: 0.11
+
+cti:
+  k: 2.0
+
+response:
+  hysteresis_n: 3
+  max_auto_restrict_fraction: 0.1
+  min_auto_restrict: 5
+
+silence:
+  intermittent_window: 20
+  intermittent_alpha: 0.0001
+  intermittent_loss_floor: 0.01
+
+healing:
+  tau_h: 0.35
+  eta: 0.6
+
+llm:
+  model: llama3.2:3b
+  temperature: 0
+  seed: 0
+  classifier_sim_cost: 1.5
+
+m9:
+  prefer_rust: true

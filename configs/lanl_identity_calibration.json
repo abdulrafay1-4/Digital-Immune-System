@@ -1,0 +1,49 @@
+{
+  "auth_sha256": "eee54f2ee202756f25e403b7b896ec1d4c6152f1ab65fc1b5beb3a3187faf53d",
+  "redteam_sha256": "606635837c684ad11e464075ecf97bc5df325ff7d7f64614d2d8c8af18051669",
+  "split_seed": 0,
+  "features": [
+    "logons",
+    "failed",
+    "ntlm",
+    "new_accounts",
+    "new_sources",
+    "new_pairs",
+    "new_ntlm_pairs"
+  ],
+  "calibration_devices": 462,
+  "calibration_attacked": 146,
+  "held_out_devices": 464,
+  "held_out_attacked": 147,
+  "keep": [
+    0,
+    1,
+    2
+  ],
+  "median": [
+    0.6931471805599453,
+    0.0,
+    0.0
+  ],
+  "spread": [
+    4.2626798770413155,
+    0.6931471805599453,
+    0.6931471805599453
+  ],
+  "aggregate": "max",
+  "offset": 0.16260831227163414,
+  "benign_q95": 0.5349558800138602,
+  "aggregate_auc": {
+    "mean": 0.9827001159919672,
+    "max": 0.9832750388629803,
+    "top2": 0.9826146461648029,
+    "top3": 0.9827001159919672
+  },
+  "saturated": {
+    "mean": false,
+    "max": false,
+    "top2": false,
+    "top3": false
+  },
+  "counters_kept": 3
+}

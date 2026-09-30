@@ -1,0 +1,8 @@
+{
+  "events_read": 508854100,
+  "logons_kept": 173734003,
+  "devices_seen": 1046,
+  "devices_active": 926,
+  "attacked_active": 293,
+  "red_team_destinations": 301
+}

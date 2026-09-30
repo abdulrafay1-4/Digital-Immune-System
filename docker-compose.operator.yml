@@ -1,0 +1,16 @@
+# Overlay: node-1 reaches level 4, and the console's signed answer decides its isolation.
+#   docker compose -f docker-compose.yml -f docker-compose.operator.yml up --build -d
+#   docker compose wait control
+
+services:
+  node-1:
+    environment:
+      ATTACK: "10,34,0.95"
+
+  console:
+    environment:
+      CONSOLE_AUTO_DECIDE: approve
+
+  control:
+    environment:
+      EXPECT_ISOLATED: node-1

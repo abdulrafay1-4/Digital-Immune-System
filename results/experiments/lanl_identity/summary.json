@@ -1,0 +1,174 @@
+{
+  "calibration": {
+    "aggregate": "max",
+    "aggregate_auc": {
+      "mean": 0.9827001159919672,
+      "max": 0.9832750388629803,
+      "top2": 0.9826146461648029,
+      "top3": 0.9827001159919672
+    },
+    "benign_q95": 0.5349558800138602,
+    "held_out_devices": 464,
+    "held_out_attacked": 147
+  },
+  "hours": {
+    "device_hours": 217078,
+    "attack_hours": 250,
+    "auc": 0.9794450255502057,
+    "auc_isolation_forest": 0.9905599922519231,
+    "tpr_at_benign_q95": 0.996,
+    "fpr_at_benign_q95": 0.05332337152028336,
+    "benign_disturbed_share": 0.14031859353957976
+  },
+  "loop": {
+    "devices": 464,
+    "attacked": 147,
+    "fleets": [
+      117,
+      116,
+      116,
+      115
+    ],
+    "ticks": 684,
+    "seeds": [
+      20000,
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007,
+      20008,
+      20009
+    ],
+    "by_arm": {
+      "full": {
+        "detected_after_onset": 0.4075,
+        "false_restriction_rate": 0.0587,
+        "device_tpr": 0.4121,
+        "latency_response_mean": 66.6001,
+        "device_fpr": 0.1732,
+        "tick_precision": 0.0032
+      },
+      "binary_zt@0.8": {
+        "detected_after_onset": 1.0,
+        "false_restriction_rate": 0.9953,
+        "device_tpr": 1.0,
+        "latency_response_mean": 0.723,
+        "device_fpr": 0.9953,
+        "tick_precision": 0.007
+      },
+      "cusum@0.15:6.4": {
+        "detected_after_onset": 0.2585,
+        "false_restriction_rate": 0.0249,
+        "device_tpr": 0.2648,
+        "latency_response_mean": 25.6471,
+        "device_fpr": 0.0261,
+        "tick_precision": 0.0031
+      },
+      "stopping_response": {
+        "detected_after_onset": 0.2245,
+        "false_restriction_rate": 0.2555,
+        "device_tpr": 0.6715,
+        "latency_response_mean": 4.8227,
+        "device_fpr": 0.484,
+        "tick_precision": 0.0015
+      },
+      "isolation_forest@0.002": {
+        "detected_after_onset": 0.5898,
+        "false_restriction_rate": 0.6631,
+        "device_tpr": 0.71,
+        "latency_response_mean": 172.9453,
+        "device_fpr": 0.6631,
+        "tick_precision": 0.0026
+      },
+      "page_cusum@0.05:1.6": {
+        "detected_after_onset": 0.3619,
+        "false_restriction_rate": 0.1158,
+        "device_tpr": 0.3613,
+        "latency_response_mean": 31.7958,
+        "device_fpr": 0.1158,
+        "tick_precision": 0.0039
+      },
+      "tolerance": {
+        "detected_after_onset": 0.9946,
+        "false_restriction_rate": 0.9877,
+        "device_tpr": 0.9986,
+        "latency_response_mean": 12.8898,
+        "device_fpr": 0.9877,
+        "tick_precision": 0.0076
+      },
+      "tolerance@lanl": {
+        "detected_after_onset": 0.483,
+        "false_restriction_rate": 0.2685,
+        "device_tpr": 0.5163,
+        "latency_response_mean": 78.7282,
+        "device_fpr": 0.2685,
+        "tick_precision": 0.0042
+      }
+    }
+  },
+  "manifest": {
+    "suite": "lanl_identity",
+    "seeds": [
+      20000,
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007,
+      20008,
+      20009
+    ],
+    "workers": 3,
+    "git_commit": "1d19cf5eb963e7b744e46ec5f677a133c90802e0",
+    "git_dirty": true,
+    "code_dirty": true,
+    "frozen_params": {
+      "trust_lambda": 0.7,
+      "trust_lambda_up": null,
+      "cohort_margin": 0.15,
+      "cohort_min_nodes": 3,
+      "rep_lam_up": 0.85,
+      "rep_lam_down": 0.6,
+      "hysteresis_n": 3,
+      "drift_coeff": 0.3,
+      "alpha": 0.4,
+      "beta": 0.35,
+      "gamma": 0.25,
+      "cti_k": 2.0,
+      "campaign_ti_threshold": 0.4,
+      "cohort_baseline_cap": 0.11,
+      "max_auto_restrict_fraction": 0.1,
+      "min_auto_restrict": 5,
+      "intermittent_window": 20,
+      "intermittent_alpha": 0.0001,
+      "intermittent_loss_floor": 0.01,
+      "obs_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "config_hash": "f7910756c9520d28",
+    "capability_binder": "rust",
+    "development_key": true,
+    "gt_key_fingerprint": "3bc99d3a9cac8f24",
+    "python": "3.12.2",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "cpu_count": 11,
+    "packages": {
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "simpy": "4.1.2",
+      "pydantic": "2.13.4",
+      "faiss-cpu": "1.15.0",
+      "matplotlib": "3.11.2"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+dist/
+build/
+
+# Rust / maturin
+m9_capability_binder/target/
+m9_capability_binder/*.so
+
+# Run outputs. The recorded evaluation (results/experiments, results/container_twin)
+# is part of the repository.
+results/*
+!results/README.md
+!results/experiments/
+!results/container_twin/
+
+# The raw LANL log is 7.6 GB: download it yourself (see data/README.md).
+data/lanl/auth*.txt.gz
+
+# TON_IoT may not be redistributed: download it and run scripts/fetch_ton_iot.py.
+data/ton_iot/*.csv
+data/ton_iot/*.csv.gz
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/
+*.swp

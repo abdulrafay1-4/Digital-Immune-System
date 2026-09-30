@@ -1,0 +1,887 @@
+{
+  "records": {
+    "windows7": {
+      "records": 7991,
+      "attack_records": 2991,
+      "auc_behavioral": 0.8401672350384487,
+      "auc_device": 0.8507386827148111,
+      "auc_network": 0.8508293547308593,
+      "auc_combined": 0.8567599465061853,
+      "auc_isolation_forest": 0.9681583416917419,
+      "benign_q95_combined": 0.372103720920376,
+      "fpr_at_q95": 0.0428,
+      "benign_disturbed_share": 0.7302,
+      "per_type": {
+        "backdoor": {
+          "records": 890,
+          "median_disturbance": 0.38728253120585376,
+          "tpr_at_q95": 0.8146067415730337
+        },
+        "ddos": {
+          "records": 1067,
+          "median_disturbance": 0.1650881763263262,
+          "tpr_at_q95": 0.004686035613870665
+        },
+        "injection": {
+          "records": 499,
+          "median_disturbance": 0.2790957158264908,
+          "tpr_at_q95": 0.10220440881763528
+        },
+        "password": {
+          "records": 379,
+          "median_disturbance": 0.27978033109305805,
+          "tpr_at_q95": 0.0158311345646438
+        },
+        "ransomware": {
+          "records": 41,
+          "median_disturbance": 0.3911382972305512,
+          "tpr_at_q95": 0.6097560975609756
+        },
+        "scanning": {
+          "records": 113,
+          "median_disturbance": 0.32624228787561244,
+          "tpr_at_q95": 0.3008849557522124
+        },
+        "xss": {
+          "records": 2,
+          "median_disturbance": 0.25483097637741664,
+          "tpr_at_q95": 0.0
+        }
+      }
+    },
+    "windows10": {
+      "records": 10554,
+      "attack_records": 5554,
+      "auc_behavioral": 0.976921786100108,
+      "auc_device": 0.6964293842275837,
+      "auc_network": 0.8737097227223622,
+      "auc_combined": 0.8965972632337055,
+      "auc_isolation_forest": 0.7964696074900972,
+      "benign_q95_combined": 0.6471098036953792,
+      "fpr_at_q95": 0.053,
+      "benign_disturbed_share": 0.7194,
+      "per_type": {
+        "ddos": {
+          "records": 2304,
+          "median_disturbance": 0.36605138423612454,
+          "tpr_at_q95": 0.006944444444444444
+        },
+        "dos": {
+          "records": 263,
+          "median_disturbance": 0.6118042953179468,
+          "tpr_at_q95": 0.39543726235741444
+        },
+        "injection": {
+          "records": 306,
+          "median_disturbance": 0.7184734368033046,
+          "tpr_at_q95": 1.0
+        },
+        "mitm": {
+          "records": 8,
+          "median_disturbance": 0.45039180329624895,
+          "tpr_at_q95": 0.0
+        },
+        "password": {
+          "records": 1814,
+          "median_disturbance": 0.5558366296540541,
+          "tpr_at_q95": 0.29768467475192945
+        },
+        "scanning": {
+          "records": 224,
+          "median_disturbance": 0.7040571571344343,
+          "tpr_at_q95": 0.7098214285714286
+        },
+        "xss": {
+          "records": 635,
+          "median_disturbance": 0.607333984130078,
+          "tpr_at_q95": 0.37480314960629924
+        }
+      }
+    }
+  },
+  "loop": {
+    "windows10": {
+      "ddos": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.814,
+          "latency_response_mean": 7.5467,
+          "false_restriction_rate": 0.0767,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9928,
+          "latency_response_mean": 1.2567,
+          "false_restriction_rate": 0.81,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.7464,
+          "latency_response_mean": 1.4233,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.4341,
+          "latency_response_mean": 2.8733,
+          "false_restriction_rate": 0.9992,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9996,
+          "latency_response_mean": 0.06,
+          "false_restriction_rate": 0.9775,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9997,
+          "latency_response_mean": 0.0033,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows10-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.3958,
+          "latency_response_mean": 5.72,
+          "false_restriction_rate": 0.2392,
+          "benign_worst_level": null
+        }
+      },
+      "dos": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9082,
+          "latency_response_mean": 4.6933,
+          "false_restriction_rate": 0.0642,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9988,
+          "latency_response_mean": 0.7467,
+          "false_restriction_rate": 0.8092,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9994,
+          "latency_response_mean": 0.0433,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.6321,
+          "latency_response_mean": 1.7767,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0367,
+          "false_restriction_rate": 0.9758,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows10-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.8701,
+          "latency_response_mean": 2.0067,
+          "false_restriction_rate": 0.2467,
+          "benign_worst_level": null
+        }
+      },
+      "injection": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9304,
+          "latency_response_mean": 4.0133,
+          "false_restriction_rate": 0.06,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9999,
+          "latency_response_mean": 0.7267,
+          "false_restriction_rate": 0.7817,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.01,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.7349,
+          "latency_response_mean": 1.3167,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0333,
+          "false_restriction_rate": 0.9767,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows10-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9898,
+          "latency_response_mean": 1.6733,
+          "false_restriction_rate": 0.25,
+          "benign_worst_level": null
+        }
+      },
+      "password": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.8956,
+          "latency_response_mean": 5.0833,
+          "false_restriction_rate": 0.0992,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9979,
+          "latency_response_mean": 0.91,
+          "false_restriction_rate": 0.835,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9974,
+          "latency_response_mean": 0.09,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.5967,
+          "latency_response_mean": 2.08,
+          "false_restriction_rate": 0.9992,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0267,
+          "false_restriction_rate": 0.9708,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows10-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.7789,
+          "latency_response_mean": 2.3767,
+          "false_restriction_rate": 0.2383,
+          "benign_worst_level": null
+        }
+      },
+      "scanning": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9137,
+          "latency_response_mean": 4.5267,
+          "false_restriction_rate": 0.08,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9991,
+          "latency_response_mean": 0.77,
+          "false_restriction_rate": 0.8233,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9993,
+          "latency_response_mean": 0.03,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.6499,
+          "latency_response_mean": 1.6567,
+          "false_restriction_rate": 0.9975,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.07,
+          "false_restriction_rate": 0.9825,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows10-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.8653,
+          "latency_response_mean": 2.04,
+          "false_restriction_rate": 0.2417,
+          "benign_worst_level": null
+        }
+      },
+      "xss": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9123,
+          "latency_response_mean": 4.5567,
+          "false_restriction_rate": 0.0725,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9986,
+          "latency_response_mean": 0.75,
+          "false_restriction_rate": 0.7825,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.7533,
+          "latency_response_mean": 1.66,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.6413,
+          "latency_response_mean": 1.8067,
+          "false_restriction_rate": 0.9992,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0367,
+          "false_restriction_rate": 0.9817,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows10-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.886,
+          "latency_response_mean": 1.9733,
+          "false_restriction_rate": 0.2133,
+          "benign_worst_level": null
+        }
+      }
+    },
+    "windows7": {
+      "backdoor": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.7336,
+          "latency_response_mean": 9.9933,
+          "false_restriction_rate": 0.0,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9707,
+          "latency_response_mean": 2.8,
+          "false_restriction_rate": 0.0133,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9931,
+          "latency_response_mean": 0.1133,
+          "false_restriction_rate": 0.9908,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.4069,
+          "latency_response_mean": 4.1333,
+          "false_restriction_rate": 0.4333,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9963,
+          "latency_response_mean": 0.4733,
+          "false_restriction_rate": 0.9317,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9998,
+          "latency_response_mean": 0.0067,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows7-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.8037,
+          "latency_response_mean": 2.27,
+          "false_restriction_rate": 0.2775,
+          "benign_worst_level": null
+        }
+      },
+      "ddos": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9036,
+          "latency_response_mean": 0.9,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 0.0,
+          "response_coverage": 0.0,
+          "latency_response_mean": null,
+          "false_restriction_rate": 0.0,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 0.22,
+          "response_coverage": 0.0164,
+          "latency_response_mean": 25.884,
+          "false_restriction_rate": 0.0183,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.5962,
+          "latency_response_mean": 2.84,
+          "false_restriction_rate": 0.9842,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.1107,
+          "latency_response_mean": 14.9767,
+          "false_restriction_rate": 0.4567,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9924,
+          "latency_response_mean": 0.6733,
+          "false_restriction_rate": 0.9208,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.6543,
+          "latency_response_mean": 2.96,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows7-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.352,
+          "latency_response_mean": 6.5067,
+          "false_restriction_rate": 0.2675,
+          "benign_worst_level": null
+        }
+      },
+      "injection": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9817,
+          "latency_response_mean": 0.3433,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 0.6533,
+          "response_coverage": 0.1749,
+          "latency_response_mean": 24.0548,
+          "false_restriction_rate": 0.0,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.8766,
+          "latency_response_mean": 5.19,
+          "false_restriction_rate": 0.0583,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9428,
+          "latency_response_mean": 0.5467,
+          "false_restriction_rate": 0.99,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.2394,
+          "latency_response_mean": 7.4833,
+          "false_restriction_rate": 0.4658,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9937,
+          "latency_response_mean": 0.5733,
+          "false_restriction_rate": 0.9142,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9303,
+          "latency_response_mean": 0.8533,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows7-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.5423,
+          "latency_response_mean": 3.73,
+          "false_restriction_rate": 0.2725,
+          "benign_worst_level": null
+        }
+      },
+      "password": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9998,
+          "latency_response_mean": 0.0067,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 0.9967,
+          "response_coverage": 0.3124,
+          "latency_response_mean": 22.597,
+          "false_restriction_rate": 0.0,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9186,
+          "latency_response_mean": 4.3533,
+          "false_restriction_rate": 0.0183,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9561,
+          "latency_response_mean": 0.4233,
+          "false_restriction_rate": 0.9833,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.2769,
+          "latency_response_mean": 6.72,
+          "false_restriction_rate": 0.4458,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9951,
+          "latency_response_mean": 0.5367,
+          "false_restriction_rate": 0.9142,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9911,
+          "latency_response_mean": 0.5867,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows7-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.8033,
+          "latency_response_mean": 2.22,
+          "false_restriction_rate": 0.2942,
+          "benign_worst_level": null
+        }
+      },
+      "ransomware": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9996,
+          "latency_response_mean": 0.0633,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.7348,
+          "latency_response_mean": 9.9567,
+          "false_restriction_rate": 0.0,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9674,
+          "latency_response_mean": 2.9033,
+          "false_restriction_rate": 0.0183,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9919,
+          "latency_response_mean": 0.1767,
+          "false_restriction_rate": 0.9875,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.4122,
+          "latency_response_mean": 4.1567,
+          "false_restriction_rate": 0.4575,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9951,
+          "latency_response_mean": 0.6,
+          "false_restriction_rate": 0.9175,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9977,
+          "latency_response_mean": 0.13,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows7-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.8196,
+          "latency_response_mean": 2.1033,
+          "false_restriction_rate": 0.2592,
+          "benign_worst_level": null
+        }
+      },
+      "scanning": {
+        "binary_zt@0.8": {
+          "device_tpr": 1.0,
+          "response_coverage": 1.0,
+          "latency_response_mean": 0.0,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "cusum@0.15:6.4": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.7037,
+          "latency_response_mean": 10.89,
+          "false_restriction_rate": 0.0,
+          "benign_worst_level": null
+        },
+        "full": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9631,
+          "latency_response_mean": 2.9967,
+          "false_restriction_rate": 0.01,
+          "benign_worst_level": null
+        },
+        "isolation_forest@0.002": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.7699,
+          "latency_response_mean": 1.52,
+          "false_restriction_rate": 0.9908,
+          "benign_worst_level": null
+        },
+        "page_cusum@0.05:1.6": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.3888,
+          "latency_response_mean": 4.47,
+          "false_restriction_rate": 0.4358,
+          "benign_worst_level": null
+        },
+        "stopping_response": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9958,
+          "latency_response_mean": 0.5233,
+          "false_restriction_rate": 0.9225,
+          "benign_worst_level": null
+        },
+        "tolerance": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.9979,
+          "latency_response_mean": 0.12,
+          "false_restriction_rate": 1.0,
+          "benign_worst_level": null
+        },
+        "tolerance@windows7-revised": {
+          "device_tpr": 1.0,
+          "response_coverage": 0.8088,
+          "latency_response_mean": 2.2133,
+          "false_restriction_rate": 0.2542,
+          "benign_worst_level": null
+        }
+      }
+    }
+  },
+  "manifest": {
+    "suite": "ton_iot_windows_revised",
+    "seeds": [
+      20000,
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007,
+      20008,
+      20009,
+      20010,
+      20011,
+      20012,
+      20013,
+      20014,
+      20015,
+      20016,
+      20017,
+      20018,
+      20019,
+      20020,
+      20021,
+      20022,
+      20023,
+      20024,
+      20025,
+      20026,
+      20027,
+      20028,
+      20029
+    ],
+    "workers": 3,
+    "git_commit": "1d19cf5eb963e7b744e46ec5f677a133c90802e0",
+    "git_dirty": true,
+    "code_dirty": true,
+    "frozen_params": {
+      "trust_lambda": 0.7,
+      "trust_lambda_up": null,
+      "cohort_margin": 0.15,
+      "cohort_min_nodes": 3,
+      "rep_lam_up": 0.85,
+      "rep_lam_down": 0.6,
+      "hysteresis_n": 3,
+      "drift_coeff": 0.3,
+      "alpha": 0.4,
+      "beta": 0.35,
+      "gamma": 0.25,
+      "cti_k": 2.0,
+      "campaign_ti_threshold": 0.4,
+      "cohort_baseline_cap": 0.11,
+      "max_auto_restrict_fraction": 0.1,
+      "min_auto_restrict": 5,
+      "intermittent_window": 20,
+      "intermittent_alpha": 0.0001,
+      "intermittent_loss_floor": 0.01,
+      "obs_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "config_hash": "f7910756c9520d28",
+    "capability_binder": "rust",
+    "development_key": true,
+    "gt_key_fingerprint": "3bc99d3a9cac8f24",
+    "python": "3.12.2",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "cpu_count": 11,
+    "packages": {
+      "numpy": "2.5.2",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "simpy": "4.1.2",
+      "pydantic": "2.13.4",
+      "faiss-cpu": "1.15.0",
+      "matplotlib": "3.11.2"
+    },
+    "mapping": "revised"
+  }
+}

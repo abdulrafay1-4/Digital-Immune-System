@@ -1,0 +1,13 @@
+[build-system]
+requires = ["maturin>=1.5,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "dis-m9"
+version = "0.1.0"
+requires-python = ">=3.11"
+description = "DIS M9 Deterministic Capability Binder (Rust extension)"
+
+[tool.maturin]
+manifest-path = "Cargo.toml"
+module-name = "dis_m9"

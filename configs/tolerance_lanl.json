@@ -1,0 +1,73 @@
+{
+  "model": {
+    "p_a": 0.0007136106159886837,
+    "z_h": [
+      0.689999,
+      0.210238,
+      0.044228,
+      0.055515,
+      3e-06,
+      3e-06,
+      3e-06,
+      3e-06,
+      3e-06,
+      3e-06
+    ],
+    "z_c": [
+      0.003876,
+      0.003876,
+      0.267442,
+      0.70155,
+      0.003876,
+      0.003876,
+      0.003876,
+      0.003876,
+      0.003876,
+      0.003876
+    ],
+    "p_c1": 1e-05,
+    "p_c2": 0.001,
+    "p_u": 0.02,
+    "eta": 2.0
+  },
+  "counts": [
+    [
+      217880,
+      66386,
+      13965,
+      17529,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      68,
+      180,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "alpha": 0.3295,
+  "average_cost": 0.0043,
+  "reproduction": {
+    "paper": "Table 2, Delta_R infinite: J = 0.16 (CEM), 0.15 (BO)",
+    "ours": {
+      "Table 8 as printed (eta 2, BetaBin n 10 on O = 0..9, b1 = p_A)": "0.325-0.329",
+      "the authors' code (BetaBin n = |O| - 1, starts healthy), eta 2": "0.277-0.295",
+      "eta 1, as in the authors' public example": "0.199-0.237",
+      "eta 1 and 1000 observation values, as in that example": "0.185-0.198"
+    },
+    "oracle_lower_bound": 0.1,
+    "verdict": "not reproduced; the equations match the authors' code line by line"
+  },
+  "site": "lanl"
+}

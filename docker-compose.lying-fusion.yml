@@ -1,0 +1,12 @@
+# Overlay: one of the three trust-fusion containers lies; the control plane checks it was outvoted.
+#   docker compose -f docker-compose.yml -f docker-compose.lying-fusion.yml up --build -d
+#   docker compose wait control
+
+services:
+  fusion-a:
+    environment:
+      FUSION_LIE: suppress
+
+  control:
+    environment:
+      EXPECT_FUSION_LIAR: "1"

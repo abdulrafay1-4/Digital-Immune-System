@@ -1,0 +1,12 @@
+# Overlay: node-1's compromised monitor forges its context one legal step at a time.
+#   docker compose -f docker-compose.yml -f docker-compose.patient-liar.yml \
+#     up --build --exit-code-from control
+
+services:
+  node-1:
+    environment:
+      LIAR_FROM: "10"
+  control:
+    environment:
+      EXPECT_RESTRICTED: ""
+      EXPECT_UNDETECTED: node-1

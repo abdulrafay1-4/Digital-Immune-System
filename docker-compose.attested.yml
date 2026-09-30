@@ -1,0 +1,63 @@
+# Overlay: devices sign their measurements, so the patient liar's forged reports are refused.
+#   docker compose -f docker-compose.yml -f docker-compose.patient-liar.yml \
+#     -f docker-compose.attested.yml up --build --exit-code-from control
+
+x-sensor: &sensor
+  image: trust-aware-dis:latest
+  networks: [dis]
+  command: sense
+  depends_on:
+    control:
+      condition: service_healthy
+
+services:
+  control:
+    environment:
+      DIS_ATTEST: "1"
+      EXPECT_UNDETECTED: ""
+      EXPECT_DETECTED: node-1
+      EXPECT_UNATTESTED: "1"
+  node-0:
+    environment:
+      DIS_ATTEST: "1"
+  node-1:
+    environment:
+      DIS_ATTEST: "1"
+  node-2:
+    environment:
+      DIS_ATTEST: "1"
+
+  sensor-0:
+    <<: *sensor
+    environment:
+      REDIS_URL: rediss://redis:6379/0
+      DIS_RUN_ID: wire-demo
+      DIS_NODES: node-0,node-1,node-2
+      DIS_TICKS: "40"
+      DIS_TICK_SECONDS: "1.0"
+      DIS_SEED: "7"
+      NODE_ID: node-0
+    volumes: [sensor-0-secrets:/secrets:ro]
+  sensor-1:
+    <<: *sensor
+    environment:
+      REDIS_URL: rediss://redis:6379/0
+      DIS_RUN_ID: wire-demo
+      DIS_NODES: node-0,node-1,node-2
+      DIS_TICKS: "40"
+      DIS_TICK_SECONDS: "1.0"
+      DIS_SEED: "7"
+      NODE_ID: node-1
+      ATTACK: "10,30,0.6"
+    volumes: [sensor-1-secrets:/secrets:ro]
+  sensor-2:
+    <<: *sensor
+    environment:
+      REDIS_URL: rediss://redis:6379/0
+      DIS_RUN_ID: wire-demo
+      DIS_NODES: node-0,node-1,node-2
+      DIS_TICKS: "40"
+      DIS_TICK_SECONDS: "1.0"
+      DIS_SEED: "7"
+      NODE_ID: node-2
+    volumes: [sensor-2-secrets:/secrets:ro]

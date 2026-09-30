@@ -1,0 +1,90 @@
+{
+  "chosen_w_network": 0.55,
+  "calibration": {
+    "devices": 38,
+    "attackers": 6,
+    "seeds": [
+      7000,
+      7001,
+      7002
+    ],
+    "scores": {
+      "0.25": {
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0,
+        "feasible": true
+      },
+      "0.4": {
+        "tpr": 0.0,
+        "fpr": 0.0,
+        "score": 0.0,
+        "feasible": true
+      },
+      "0.55": {
+        "tpr": 0.4444444444444444,
+        "fpr": 0.0,
+        "score": 0.4444444444444444,
+        "feasible": true
+      },
+      "0.7": {
+        "tpr": 0.4444444444444444,
+        "fpr": 0.08333333333333333,
+        "score": 0.3611111111111111,
+        "feasible": false
+      },
+      "0.85": {
+        "tpr": 0.6666666666666666,
+        "fpr": 0.16666666666666666,
+        "score": 0.5,
+        "feasible": false
+      },
+      "1.0": {
+        "tpr": 0.8333333333333334,
+        "fpr": 0.28125,
+        "score": 0.5520833333333334,
+        "feasible": false
+      }
+    }
+  },
+  "held_out": {
+    "devices": 28,
+    "attackers": 17,
+    "seeds": [
+      20000,
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007,
+      20008,
+      20009
+    ],
+    "by_weight": {
+      "0.25": {
+        "device_tpr": 0.0,
+        "device_fpr": 0.0,
+        "tick_precision": 0.0,
+        "tick_recall": 0.0,
+        "response_coverage": 0.0,
+        "latency_response_mean": 0.0,
+        "false_restriction_rate": 0.0,
+        "availability_cost": 0.0,
+        "containment_rate": 0.0
+      },
+      "0.55": {
+        "device_tpr": 0.1882,
+        "device_fpr": 0.1455,
+        "tick_precision": 0.0006,
+        "tick_recall": 0.0017,
+        "response_coverage": 0.015,
+        "latency_response_mean": 106.8,
+        "false_restriction_rate": 0.0909,
+        "availability_cost": 135.1,
+        "containment_rate": 0.1176
+      }
+    }
+  }
+}

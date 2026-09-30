@@ -1,0 +1,12 @@
+{
+  "beta_reputation": "beta_reputation",
+  "binary_zt": "binary_zt@0.8",
+  "cusum": "cusum@0.15:6.4",
+  "ddca": "ddca@0.85:4",
+  "dirichlet_reliability": "dirichlet_reliability",
+  "isolation_forest": "isolation_forest@0.002",
+  "isolation_forest_persistent": "isolation_forest_persistent@0.002",
+  "page_cusum": "page_cusum@0.05:1.6",
+  "penalty_healing": "penalty_healing@10",
+  "tolerance_periodic": "tolerance_periodic@5"
+}
